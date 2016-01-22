@@ -54,9 +54,9 @@ if [ -n "${SOURCE_REF}" ]; then
     exit 1
   fi
   popd
-  docker build --no-cache --rm -t "${TAG}" "${BUILD_DIR}"
+  docker build --no-cache --rm -t "${TAG}" "${BUILD_DIR}/${CONTEXT_DIR}"
 else
-  docker build --no-cache --rm -t "${TAG}" "${SOURCE_REPOSITORY}"
+  docker build --no-cache --rm -t "${TAG}" "${SOURCE_REPOSITORY}/${CONTEXT_DIR}"
 fi
 
 if [[ -d /var/run/secrets/openshift.io/push ]] && [[ ! -e /root/.dockercfg ]]; then
