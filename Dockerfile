@@ -14,7 +14,7 @@
 #
 # The standard name for this image is openshift/origin-custom-docker-builder
 #
-FROM openshift/origin-base
+FROM centos:7
 
 RUN yum install -y gettext automake make docker
 ENV HOME /root
