@@ -16,7 +16,7 @@
 #
 FROM openshift/origin-base
 
-RUN yum install -y --enablerepo=centosplus gettext automake make docker
+RUN yum install -y gettext automake make docker
 ENV HOME /root
 ADD ./build.sh /tmp/build.sh
 CMD ["/tmp/build.sh"]
